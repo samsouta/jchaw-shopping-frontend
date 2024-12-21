@@ -1,6 +1,7 @@
 import React from 'react'
-import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button } from "@nextui-org/react";
+import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem } from "@nextui-org/react";
 import { Menu } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 
 type MobileMenuProps = {
@@ -8,9 +9,14 @@ type MobileMenuProps = {
 };
 
 const MobileMenu: React.FC<MobileMenuProps> = ({navList}) => {
+    const nav = useNavigate()
+    const handleMenuList = (item:string) => {
+        const page = item.toLocaleLowerCase()
+        nav(`/${page}`)
+    }
     return (
         <>
-            <Dropdown className=' bg-[--off-white]' backdrop="blur">
+            <Dropdown className=' bg-[var(--light-tan)]' backdrop="blur">
                 <DropdownTrigger >
                     <span
                         className=' cursor-pointer'
@@ -21,7 +27,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({navList}) => {
                 <DropdownMenu variant="faded" aria-label="Static Actions">
                    {
                     navList?.map((item)=> (
-                        <DropdownItem key={item.id} className=' text-md text-[var(--text-title)]'
+                        <DropdownItem onPress={()=>handleMenuList(item.label)} key={item.id} className=' text-md button-text text-[var(--dark-brown)]'
                          >{item.label}
                          </DropdownItem>
                     ))

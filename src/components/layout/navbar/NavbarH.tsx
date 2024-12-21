@@ -4,20 +4,22 @@ import { navList } from '../../../data/navbar';
 import { Button } from '@nextui-org/react';
 import { motion } from 'framer-motion';
 import MobileMenu from './MobileMenu';
+import { useNavigate } from 'react-router-dom';
 
 
 const NavbarH: React.FC = () => {
     const [activeId, setActiveId] = useState<string>(localStorage.getItem("navActive") || 'home');
+    const nav = useNavigate();
     const handleClick = (id: string) => {
         localStorage.setItem('navActive', id)
         setActiveId(id);
-        console.log(id)
+        nav(`${id}`)
     };
 
     return (
         <>
             <Navbar className=' bg-[var(--tan)]' >
-                <Navbar.Brand href="#">
+                <Navbar.Brand href="/home">
                     {/* <img src="#" className="mr-3 h-6 sm:h-9" alt="" /> */}
                     <span className="self-center text-[var(--light-tan)] header-text whitespace-nowrap text-xl font-semibold dark:text-white">J-Chaw</span>
                 </Navbar.Brand>

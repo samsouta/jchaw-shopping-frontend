@@ -1,13 +1,13 @@
 import React from 'react'
-import Home_1 from '../components/Home/Home_1'
-import Home_2 from '../components/Home/Home_2'
-import Home_3 from '../components/Home/Home_3'
-import Home_4 from '../components/Home/Home_4'
-import Home_5 from '../components/Home/Home_5'
-import Home_6 from '../components/Home/Home_6'
-import Home_7 from '../components/Home/Home_7'
-import Home_8 from '../components/Home/Home_8'
-import Home_9 from '../components/Home/Home_9'
+import Home_1 from '../components/UI/home/Home_1'
+import Home_2 from '../components/UI/home/Home_2'
+import Home_3 from '../components/UI/home/Home_3'
+import Home_4 from '../components/UI/home/Home_4'
+import Home_5 from '../components/UI/home/Home_5'
+import Home_6 from '../components/UI/home/Home_6'
+import Home_7 from '../components/UI/home/Home_7'
+import Home_8 from '../components/UI/home/Home_8'
+import Home_9 from '../components/UI/home/Home_9'
 
 
 const Home: React.FC = () => {
@@ -22,7 +22,6 @@ const Home: React.FC = () => {
       <Home_7/>
       <Home_8/>
       <Home_9/>
-      <div className=' h-[100vh]' ></div>
     </div>
   )
 }
